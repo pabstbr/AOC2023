@@ -20,20 +20,13 @@ numeralDict = {
 }
 
 inputFile = open('../resources/PuzzleInputs/Day1Input', 'r')
-listLineNums = []
 totalVal = 0
 for line in inputFile:
     for key in numeralDict:
         line = line.replace(key, numeralDict[key])
-    print(line)
 
     lineNums = [int(i) for i in line if i.isdigit()]
 
-    print(lineNums)
-    listLineNums.append(lineNums)
-    lineVal = lineNums[0]*10+lineNums[-1]
-    print(lineVal)
-    totalVal = totalVal+lineVal
+    totalVal = totalVal + (lineNums[0]*10 + lineNums[-1])
 
-print(listLineNums)
 print(totalVal)
